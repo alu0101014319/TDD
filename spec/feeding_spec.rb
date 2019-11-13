@@ -75,6 +75,20 @@ RSpec.describe Alimento do
 	       expect(@lentejas.kcal).to eq(314.6)
        end
 
+       context "Calcular el impacto ambiental de la dieta recomendada para un varón adulto (54gr proteína)" do
+	       it "Obtener impacto ambiental de la dieta" do
+		       @carne_de_vaca = Alimento.new("Carne de vaca",10.0,0.0,1.47,50.0,164.0) #47.4 gr
+		       @carne_de_cordero = Alimento.new("Carne de cordero",10.0,0.0,9.44,20.0,185.0) #55.6 gr
+		       @lentejas_ = Alimento.new("Lentejas",10.0,22.13,0.6,0.4,3.4) #42.6 gr
+		       @tofu = Alimento.new("Tofu",10.0,2.38,6.0,2.0,2.2) #125 gr
+		       @nuez = Alimento.new("Nuez",14.0,14.7,37.8,0.3,7.9) #70 gr
+
+		       expect(@carne_de_vaca.impacto(47.4,@carne_de_cordero,55.6, @lentejas,42.6, @tofu,125, @nuez,70).to_s).to eq("[3.77, 19.03]")
+
+	       end
+       end
+
+
 
 
 
