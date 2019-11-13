@@ -55,6 +55,19 @@ RSpec.describe Alimento do
 	       expect(@lentejas.terreno).to eq(3.4)
        end
 
+       it "Obtener el alimento formateado" do
+               expect(@carne_vaca.formato).to eq("Nombre: #{@carne_vaca.name} Proteínas: #{@carne_vaca.proteina} Carbohidratos: #{@carne_vaca.carbohidratos} Lípidos: #{@carne_vaca.lipidos} GasesEI: #{@carne_vaca.gases} Terreno: #{@carne_vaca.terreno}")
+
+               expect(@carne_cordero.formato).to eq("Nombre: #{@carne_cordero.name} Proteínas: #{@carne_cordero.proteina} Carbohidratos: #{@carne_cordero.carbohidratos} Lípidos: #{@carne_cordero.lipidos} GasesEI: #{@carne_cordero.gases} Terreno: #{@carne_cordero.terreno}")
+
+               expect(@camarones.formato).to eq("Nombre: #{@camarones.name} Proteínas: #{@camarones.proteina} Carbohidratos: #{@camarones.carbohidratos} Lípidos: #{@camarones.lipidos} GasesEI: #{@camarones.gases} Terreno: #{@camarones.terreno}")
+	       
+               expect(@salmon.formato).to eq("Nombre: #{@salmon.name} Proteínas: #{@salmon.proteina} Carbohidratos: #{@salmon.carbohidratos} Lípidos: #{@salmon.lipidos} GasesEI: #{@salmon.gases} Terreno: #{@salmon.terreno}")
+
+               expect(@lentejas.formato).to eq("Nombre: #{@lentejas.name} Proteínas: #{@lentejas.proteina} Carbohidratos: #{@lentejas.carbohidratos} Lípidos: #{@lentejas.lipidos} GasesEI: #{@lentejas.gases} Terreno: #{@lentejas.terreno}")
+       end
+
+
 
 
 
