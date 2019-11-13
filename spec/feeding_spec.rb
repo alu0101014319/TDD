@@ -14,6 +14,7 @@ RSpec.describe Alimento do
 	       expect(@salmon.name).to eq("Salmón")
 	       expect(@lentejas.name).to eq("Lentejas")
        end
+
        it "Obtener gramos de proteína" do
 	       expect(@carne_vaca.proteina).to eq(21.1)
 	       expect(@carne_cordero.proteina).to eq(18.0)
@@ -21,6 +22,15 @@ RSpec.describe Alimento do
 	       expect(@salmon.proteina).to eq(19.9)
 	       expect(@lentejas.proteina).to eq(23.5)
        end
+
+       it "Obtener gramos de carbohidratos" do
+	       expect(@carne_vaca.carbohidratos).to eq(0.0)
+               expect(@carne_cordero.carbohidratos).to eq(0.0)
+               expect(@camarones.carbohidratos).to eq(1.5)
+	       expect(@salmon.carbohidratos).to eq(0.0)
+	       expect(@lentejas.carbohidratos).to eq(52.0)
+       end
+
 
 
 

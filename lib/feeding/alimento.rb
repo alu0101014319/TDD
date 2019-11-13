@@ -17,4 +17,8 @@ class Alimento
 		@pr
 	end
 
+	def carbohidratos
+		@ca
+	end
+
 end
