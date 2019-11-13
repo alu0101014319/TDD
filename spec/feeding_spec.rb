@@ -67,6 +67,13 @@ RSpec.describe Alimento do
                expect(@lentejas.formato).to eq("Nombre: #{@lentejas.name} Proteínas: #{@lentejas.proteina} Carbohidratos: #{@lentejas.carbohidratos} Lípidos: #{@lentejas.lipidos} GasesEI: #{@lentejas.gases} Terreno: #{@lentejas.terreno}")
        end
 
+       it "Obtener las kcal del alimento" do
+	       expect(@carne_vaca.kcal).to eq(112.3)
+               expect(@carne_cordero.kcal).to eq(225)
+	       expect(@camarones.kcal).to eq(81.8)
+               expect(@salmon.kcal).to eq(202)
+	       expect(@lentejas.kcal).to eq(314.6)
+       end
 
 
 

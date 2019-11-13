@@ -37,4 +37,8 @@ class Alimento
 		"Nombre: #{@no} Proteínas: #{@pr} Carbohidratos: #{@ca} Lípidos: #{@li} GasesEI: #{@gei} Terreno: #{@te}"
 	end
 
+	def kcal 
+		(@pr * 4 + @ca * 4 + @li * 9).round(2)
+	end
+
 end
