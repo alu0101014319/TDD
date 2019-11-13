@@ -31,6 +31,15 @@ RSpec.describe Alimento do
 	       expect(@lentejas.carbohidratos).to eq(52.0)
        end
 
+       it "Obtener gramos de lípidos" do
+	       expect(@carne_vaca.lipidos).to eq(3.1)
+               expect(@carne_cordero.lipidos).to eq(17.0)
+	       expect(@camarones.lipidos).to eq(0.6)
+	       expect(@salmon.lipidos).to eq(13.6)
+	       expect(@lentejas.lipidos).to eq(1.4)
+       end
+
+
 
 
 

@@ -21,4 +21,8 @@ class Alimento
 		@ca
 	end
 
+	def lipidos
+		@li
+	end
+
 end
