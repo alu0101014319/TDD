@@ -39,6 +39,15 @@ RSpec.describe Alimento do
 	       expect(@lentejas.lipidos).to eq(1.4)
        end
 
+       it "Obtener kilos de gases de efecto invernadero" do
+	       expect(@carne_vaca.gases).to eq(50.0)
+	       expect(@carne_cordero.gases).to eq(20.0)
+	       expect(@camarones.gases).to eq(18.0)
+	       expect(@salmon.gases).to eq(6.0)
+               expect(@lentejas.gases).to eq(0.4)
+       end
+
+
 
 
 

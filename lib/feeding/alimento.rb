@@ -25,4 +25,8 @@ class Alimento
 		@li
 	end
 
+	def gases 
+		@gei
+	end
+
 end
