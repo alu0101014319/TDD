@@ -47,6 +47,15 @@ RSpec.describe Alimento do
                expect(@lentejas.gases).to eq(0.4)
        end
 
+       it "Obtener uso del terreno anual en m²" do
+	       expect(@carne_vaca.terreno).to eq(164.0)
+               expect(@carne_cordero.terreno).to eq(185.0)
+               expect(@camarones.terreno).to eq(2.0)
+	       expect(@salmon.terreno).to eq(3.7)
+	       expect(@lentejas.terreno).to eq(3.4)
+       end
+
+
 
 
 

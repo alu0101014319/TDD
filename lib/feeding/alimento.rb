@@ -29,4 +29,8 @@ class Alimento
 		@gei
 	end
 
+	def terreno
+		@te
+	end
+
 end
