@@ -9,4 +9,8 @@ class Alimento
 		@te = te
 	end
 
+	def name
+		@no
+	end
+
 end
