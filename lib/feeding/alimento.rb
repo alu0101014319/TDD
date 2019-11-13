@@ -13,4 +13,8 @@ class Alimento
 		@no
 	end
 
+	def proteina
+		@pr
+	end
+
 end
