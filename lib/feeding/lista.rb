@@ -22,4 +22,18 @@ class Lista
 			@head = @head[:prev]
 		end
 	end
+
+	def insert_tail(node)
+		if @head.nil?
+			@size = 1
+			@head = Node.new(node, nil, nil)
+			@tail = @head
+		else
+			@size += 1
+			aux = @tail
+			@tail[:next] = Node.new(node, nil, aux)
+			@tail = @tail[:next]
+		end
+	end
+
 end
