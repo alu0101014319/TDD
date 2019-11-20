@@ -147,6 +147,13 @@ RSpec.describe Lista do
 			expect(aux[:value].name).to eq("Carne de vaca")
 		end
 
+		it "Obtener la cola" do
+			@lista.insert_tail(@carne_vaca)
+                        aux = @lista.get_tail()
+                        expect(aux[:value].name).to eq("Carne de vaca")
+                end
+
+
 
 	end
 
