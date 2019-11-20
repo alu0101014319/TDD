@@ -110,5 +110,17 @@ class Lista
 		lista
 	end
 
+	def gases_anuales(gramos)
+		gases = 0
+		iterator = 0
+		aux = @head
+		while !aux.nil?
+			gases += aux[:value].porcion_gases(gramos[iterator])
+			aux = aux[:next]
+			iterator += 1
+		end
+		gases.round(2)
+	end
+
 
 end

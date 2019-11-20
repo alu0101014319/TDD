@@ -103,6 +103,51 @@ RSpec.describe Alimento do
 end
 
 RSpec.describe Lista do
+	 before(:all) do
+
+ 		 @lentejas_esp = Alimento.new("Lentejas", 70.5, 156.0, 4.2, 0.4, 3.4)#300gr
+		 @nueces_esp = Alimento.new("Nueces", 40.0, 42.0, 108.0, 0.3, 7.9)#200g
+		 @leche_esp = Alimento.new("Leche", 9.9, 14.4, 9.6, 3.2, 8.9)#300gr
+		 @chocolate_esp = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#100gr
+		 @camarones_esp = Alimento.new("Camarones", 35.2, 3.0, 1.2, 18.0, 2.0)#200gr
+		 @gramos_esp = [300,200,300,100,200]
+		 @española = Lista.new(nil, nil)
+		 @española.insert_group([@lentejas_esp, @nueces_esp, @leche_esp, @chocolate_esp, @camarones_esp])
+
+		 @lentejas_vas = Alimento.new("Lentejas", 70.5, 156.0, 4.2, 0.4, 3.4)#300gr
+		 @chocolate_vas = Alimento.new("Chocolate", 10.6, 96.0, 60.0, 2.3, 3.4)#200gr
+		 @tofu_vas = Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)#1000gr
+		 @cerveza_vas = Alimento.new("Cerveza", 1.5, 10.8, 0.0, 0.24, 0.22)#300gr
+		 @leche_vas = Alimento.new("Leche", 6.6, 9.6, 6.4, 3.2, 8.9)#200gr
+		 @gramos_vas = [300,200,100,300,200]
+		 @vasca = Lista.new(nil, nil)
+		 @vasca.insert_group([@lentejas_vas, @chocolate_vas, @tofu_vas, @cerveza_vas, @leche_vas])
+
+		 @leche_vgr = Alimento.new("Leche",128.0, 185.76, 123.8, 3.2, 8.9)#3870gr
+		 @huevos_vgr = Alimento.new("Huevos", 22.0, 1.87, 18.7, 4.2, 5.7)#170gr
+		 @lentejas_vgr = Alimento.new("Lentejas", 47.0, 104.0, 2.8, 0.4, 3.4)#200gr
+		 @gramos_vgr = [3870, 170, 200]
+		 @vegetaria = Lista.new(nil, nil)
+		 @vegetaria.insert_group([@leche_vgr, @huevos_vgr, @lentejas_vgr])
+
+		 @lentejas_vgl = Alimento.new("Lentejas", 117.5, 260.0, 7.0, 0.4, 3.4)#500gr
+		 @nueces_vgl = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#100gr
+		 @tofu_vgl = Alimento.new("Tofu", 16.0, 3.8, 9.6, 2.0, 2.2)#200gr
+		 @gramos_vgl = [500,100,200]
+		 @vegetalia = Lista.new(nil, nil)
+		 @vegetalia.insert_group([@lentejas_vgl, @nueces_vgl, @tofu_vgl])
+
+		 @vaca_car = Alimento.new("Carne vaca", 105.5, 0.0, 15.5, 50.0, 164.0)#500gr
+		 @cerdo_car = Alimento.new("Carne cerdo", 107.5, 0.0, 31.5, 7.6, 11.0)#500gr
+		 @pollo_car = Alimento.new("Carne pollo", 103.0, 0.0, 28.0, 5.7, 7.1)#500gr
+		 @lentejas_car = Alimento.new("Lentejas", 70.5, 156.0, 4.2, 0.4, 3.4)#300gr
+		 @gramos_car = [500,500,500,300]
+		 @carnivora = Lista.new(nil, nil)
+		 @carnivora.insert_group([@vaca_car, @cerdo_car, @pollo_car, @lentejas_car])
+	 end
+
+
+
 	context "Probando funcionamiento de la lista doblemente enlazada" do
 		
 		before(:each) do
@@ -177,10 +222,36 @@ RSpec.describe Lista do
 			expect(@lista.show_list()).to eq("(Carne de vaca, 21.1, 0.0, 3.1, 50.0, 164.0)(Carne de cordero, 18.0, 0.0, 17.0, 20.0, 185.0)(Camarones, 17.6, 1.5, 0.6, 18.0, 2.0)")
 
 		end
+	end			
 
-
-
-
+	context "Dieta Española para hombre" do
+		it "Calcular los gases anuales" do
+			expect(@española.gases_anuales(@gramos_esp)).to eq(4.97)
+		end
 	end
+
+	context "Dieta Vasca para mujer" do
+                it "Calcular los gases anuales" do
+			expect(@vasca.gases_anuales(@gramos_vas)).to eq(1.49)
+                end
+        end
+	
+	context "Dieta Vegetaria para hombre" do
+                it "Calcular los gases anuales" do
+			expect(@vegetaria.gases_anuales(@gramos_vgr)).to eq(13.17)
+                end
+        end
+	
+	context "Dieta Vegetalia para mujer" do
+                it "Calcular los gases anuales" do
+			expect(@vegetalia.gases_anuales(@gramos_vgl)).to eq(0.63)
+                end
+        end
+	
+	context "Dieta Carnívora para hombre" do           
+		it "Calcular los gases anuales" do
+			expect(@carnivora.gases_anuales(@gramos_car)).to eq(31.77)
+                end
+        end
 
 end
