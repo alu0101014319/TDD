@@ -135,6 +135,13 @@ RSpec.describe Lista do
 			expect(@lista.head).to be_nil()
 		end
 
+		it "Extraer por la cola" do
+			@lista.insert_tail(@carne_vaca)
+			@lista.extract_tail()
+                        expect(@lista.tail).to be_nil()
+		end
+
+
 	end
 
 end

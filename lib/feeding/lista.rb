@@ -53,5 +53,22 @@ class Lista
 		end
 	end
 
+	def extract_tail
+		if @head.nil?
+                        raise "Lista vacía"
+                else
+                        if @head == @tail
+				@size = 0
+                                @head = nil
+                                @tail = nil
+                        else
+				@size -= 1
+                                aux = @tail
+                                @tail = aux[:prev]
+                                @tail[:next] = nil
+                        end
+                end
+	end
+
 
 end
