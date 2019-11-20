@@ -104,13 +104,24 @@ end
 
 RSpec.describe Lista do
 	context "Probando funcionamiento de la lista doblemente enlazada" do
+		
+		before(:each) do
+			@lista = Lista.new(nil, nil)
+		end
+
 		it "Generar nodo con struct" do
 			@nodo = Node.new("Carne", nil, nil)
 			expect(@nodo[:value]).to eq("Carne")
 		end
 
 		it "Inicializar lista" do
-			@lista = Lista.new(nil, nil)
+			expect(@lista.head).to be_nil()
+		end
+
+		it "Insertar por la cabeza" do
+			@carne_vaca = Alimento.new("Carne de vaca", 21.0, 0.0, 3.1, 50.0, 164.0)
+			@lista.insert_head(@carne_vaca)
+			expect(@lista.head[:value].name).to eq("Carne de vaca")
 		end
 	end
 
