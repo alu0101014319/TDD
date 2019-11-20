@@ -108,6 +108,10 @@ RSpec.describe Lista do
 			@nodo = Node.new("Carne", nil, nil)
 			expect(@nodo[:value]).to eq("Carne")
 		end
+
+		it "Inicializar lista" do
+			@lista = Lista.new(nil, nil)
+		end
 	end
 
 end
