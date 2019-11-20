@@ -228,30 +228,54 @@ RSpec.describe Lista do
 		it "Calcular los gases anuales" do
 			expect(@española.gases_anuales(@gramos_esp)).to eq(4.97)
 		end
+
+		it "Calcular el uso de terreno anual" do
+			expect(@española.terreno_anual(@gramos_esp)).to eq(6.01)
+		end
 	end
 
 	context "Dieta Vasca para mujer" do
                 it "Calcular los gases anuales" do
 			expect(@vasca.gases_anuales(@gramos_vas)).to eq(1.49)
                 end
+
+		it "Calcular el uso de terreno anual" do
+			expect(@vasca.terreno_anual(@gramos_vas)).to eq(3.77)
+                end
+
         end
 	
 	context "Dieta Vegetaria para hombre" do
                 it "Calcular los gases anuales" do
 			expect(@vegetaria.gases_anuales(@gramos_vgr)).to eq(13.17)
                 end
+
+		it "Calcular el uso de terreno anual" do
+			expect(@vegetaria.terreno_anual(@gramos_vgr)).to eq(36.09)
+                end
+
         end
 	
 	context "Dieta Vegetalia para mujer" do
                 it "Calcular los gases anuales" do
 			expect(@vegetalia.gases_anuales(@gramos_vgl)).to eq(0.63)
                 end
+
+		it "Calcular el uso de terreno anual" do
+			expect(@vegetalia.terreno_anual(@gramos_vgl)).to eq(2.93)
+                end
+
         end
 	
 	context "Dieta Carnívora para hombre" do           
 		it "Calcular los gases anuales" do
 			expect(@carnivora.gases_anuales(@gramos_car)).to eq(31.77)
                 end
+
+		it "Calcular el uso de terreno anual" do
+			expect(@carnivora.terreno_anual(@gramos_car)).to eq(92.07)
+                end
+
         end
 
 end

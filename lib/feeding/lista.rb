@@ -122,5 +122,17 @@ class Lista
 		gases.round(2)
 	end
 
+	def terreno_anual(gramos)
+		terreno = 0
+		iterator = 0
+		aux = @head
+		while !aux.nil?
+			terreno += aux[:value].porcion_terreno(gramos[iterator])
+			aux = aux[:next]
+			iterator += 1
+		end
+		terreno.round(2)
+	end
+
 
 end
