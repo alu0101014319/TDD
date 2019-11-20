@@ -86,5 +86,9 @@ class Lista
 		end
 	end
 
+	def get_size
+		@size
+	end
+
 
 end

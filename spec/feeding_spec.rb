@@ -153,6 +153,12 @@ RSpec.describe Lista do
                         expect(aux[:value].name).to eq("Carne de vaca")
                 end
 
+		it "Obtener la tamaño" do
+                        @lista.insert_head(@carne_vaca)
+			expect(@lista.get_size()).to eq(1)
+                end
+
+
 
 
 	end
