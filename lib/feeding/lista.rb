@@ -96,5 +96,19 @@ class Lista
 		end
 	end
 
+	def show_list
+		lista = ""
+		if @head.nil?
+			raise "Lista vacía"
+		else
+			aux = @head
+			while !aux.nil?
+				lista << aux[:value].to_s
+				aux = aux[:next]
+			end
+		end
+		lista
+	end
+
 
 end

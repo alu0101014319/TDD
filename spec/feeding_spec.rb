@@ -107,7 +107,7 @@ RSpec.describe Lista do
 		
 		before(:each) do
 			@lista = Lista.new(nil, nil)
-			@carne_vaca = Alimento.new("Carne de vaca", 21.0, 0.0, 3.1, 50.0, 164.0)
+			@carne_vaca = Alimento.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
 		end
 
 		it "Generar nodo con struct" do
@@ -167,6 +167,15 @@ RSpec.describe Lista do
 			@lista.insert_group([@carne_vaca, @carne_cordero, @camarones, @salmon, @lentejas])
 
 			expect(@lista.get_size()).to eq(5)
+		end
+
+		it "Mostrar lista" do
+			@carne_cordero = Alimento.new("Carne de cordero", 18.0,0.0,17.0,20.0,185.0)
+			@camarones = Alimento.new("Camarones", 17.6,1.5,0.6,18.0,2.0)
+
+                        @lista.insert_group([@carne_vaca, @carne_cordero, @camarones])
+			expect(@lista.show_list()).to eq("(Carne de vaca, 21.1, 0.0, 3.1, 50.0, 164.0)(Carne de cordero, 18.0, 0.0, 17.0, 20.0, 185.0)(Camarones, 17.6, 1.5, 0.6, 18.0, 2.0)")
+
 		end
 
 
