@@ -33,8 +33,8 @@ class Alimento
 		@te
 	end
 
-	def formato
-		"Nombre: #{@no} Proteínas: #{@pr} Carbohidratos: #{@ca} Lípidos: #{@li} GasesEI: #{@gei} Terreno: #{@te}"
+	def to_s
+		"(#{@no}, #{@pr}, #{@ca}, #{@li}, #{@gei}, #{@te})"
 	end
 
 	def kcal 

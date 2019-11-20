@@ -56,15 +56,15 @@ RSpec.describe Alimento do
        end
 
        it "Obtener el alimento formateado" do
-               expect(@carne_vaca.formato).to eq("Nombre: #{@carne_vaca.name} Proteínas: #{@carne_vaca.proteina} Carbohidratos: #{@carne_vaca.carbohidratos} Lípidos: #{@carne_vaca.lipidos} GasesEI: #{@carne_vaca.gases} Terreno: #{@carne_vaca.terreno}")
+               expect(@carne_vaca.to_s).to eq("(#{@carne_vaca.name}, #{@carne_vaca.proteina}, #{@carne_vaca.carbohidratos}, #{@carne_vaca.lipidos}, #{@carne_vaca.gases}, #{@carne_vaca.terreno})")
 
-               expect(@carne_cordero.formato).to eq("Nombre: #{@carne_cordero.name} Proteínas: #{@carne_cordero.proteina} Carbohidratos: #{@carne_cordero.carbohidratos} Lípidos: #{@carne_cordero.lipidos} GasesEI: #{@carne_cordero.gases} Terreno: #{@carne_cordero.terreno}")
+               expect(@carne_cordero.to_s).to eq("(#{@carne_cordero.name}, #{@carne_cordero.proteina}, #{@carne_cordero.carbohidratos}, #{@carne_cordero.lipidos}, #{@carne_cordero.gases}, #{@carne_cordero.terreno})")
 
-               expect(@camarones.formato).to eq("Nombre: #{@camarones.name} Proteínas: #{@camarones.proteina} Carbohidratos: #{@camarones.carbohidratos} Lípidos: #{@camarones.lipidos} GasesEI: #{@camarones.gases} Terreno: #{@camarones.terreno}")
+               expect(@camarones.to_s).to eq("(#{@camarones.name}, #{@camarones.proteina}, #{@camarones.carbohidratos}, #{@camarones.lipidos}, #{@camarones.gases}, #{@camarones.terreno})")
 	       
-               expect(@salmon.formato).to eq("Nombre: #{@salmon.name} Proteínas: #{@salmon.proteina} Carbohidratos: #{@salmon.carbohidratos} Lípidos: #{@salmon.lipidos} GasesEI: #{@salmon.gases} Terreno: #{@salmon.terreno}")
+               expect(@salmon.to_s).to eq("(#{@salmon.name}, #{@salmon.proteina}, #{@salmon.carbohidratos}, #{@salmon.lipidos}, #{@salmon.gases}, #{@salmon.terreno})")
 
-               expect(@lentejas.formato).to eq("Nombre: #{@lentejas.name} Proteínas: #{@lentejas.proteina} Carbohidratos: #{@lentejas.carbohidratos} Lípidos: #{@lentejas.lipidos} GasesEI: #{@lentejas.gases} Terreno: #{@lentejas.terreno}")
+               expect(@lentejas.to_s).to eq("(#{@lentejas.name}, #{@lentejas.proteina}, #{@lentejas.carbohidratos}, #{@lentejas.lipidos}, #{@lentejas.gases}, #{@lentejas.terreno})")
        end
 
        it "Obtener las kcal del alimento" do
@@ -103,4 +103,11 @@ RSpec.describe Alimento do
 end
 
 RSpec.describe Lista do
+	context "Probando funcionamiento de la lista doblemente enlazada" do
+		it "Generar nodo con struct" do
+			@nodo = Node.new("Carne", nil, nil)
+			expect(@nodo[:value]).to eq("Carne")
+		end
+	end
+
 end
