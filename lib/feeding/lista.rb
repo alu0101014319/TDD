@@ -134,5 +134,9 @@ class Lista
 		terreno.round(2)
 	end
 
-
+	def gases_diarios(gramos)
+		gases = gases_anuales(gramos)
+		gases_d = (gases / 365).round(3)
+		gases_d
+	end
 end
