@@ -90,5 +90,11 @@ class Lista
 		@size
 	end
 
+	def insert_group(v_nodes)
+		v_nodes.each do |nodo|
+			self.insert_tail(nodo)
+		end
+	end
+
 
 end

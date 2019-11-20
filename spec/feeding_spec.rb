@@ -158,6 +158,17 @@ RSpec.describe Lista do
 			expect(@lista.get_size()).to eq(1)
                 end
 
+		it "Insertar grupo de alimentos" do
+			@carne_cordero = Alimento.new("Carne de cordero", 18.0,0.0,17.0,20.0,185.0)
+			@camarones = Alimento.new("Camarones", 17.6,1.5,0.6,18.0,2.0)
+			@salmon = Alimento.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+			@lentejas = Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+			
+			@lista.insert_group([@carne_vaca, @carne_cordero, @camarones, @salmon, @lentejas])
+
+			expect(@lista.get_size()).to eq(5)
+		end
+
 
 
 
