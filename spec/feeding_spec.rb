@@ -100,14 +100,7 @@ RSpec.describe Alimento do
 
 	       end
        end
+end
 
-
-
-
-
-
-
-
-
-
+RSpec.describe Lista do
 end
