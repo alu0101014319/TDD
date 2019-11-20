@@ -70,5 +70,13 @@ class Lista
                 end
 	end
 
+	def get_head
+		if @head.nil?
+			raise "Lista vacía"
+		else
+			@head
+		end
+	end
+
 
 end

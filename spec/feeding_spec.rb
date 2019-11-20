@@ -141,6 +141,12 @@ RSpec.describe Lista do
                         expect(@lista.tail).to be_nil()
 		end
 
+		it "Obtener la cabeza" do
+			@lista.insert_head(@carne_vaca)
+			aux = @lista.get_head()
+			expect(aux[:value].name).to eq("Carne de vaca")
+		end
+
 
 	end
 
