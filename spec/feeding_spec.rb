@@ -107,6 +107,7 @@ RSpec.describe Lista do
 		
 		before(:each) do
 			@lista = Lista.new(nil, nil)
+			@carne_vaca = Alimento.new("Carne de vaca", 21.0, 0.0, 3.1, 50.0, 164.0)
 		end
 
 		it "Generar nodo con struct" do
@@ -119,16 +120,21 @@ RSpec.describe Lista do
 		end
 
 		it "Insertar por la cabeza" do
-			@carne_vaca = Alimento.new("Carne de vaca", 21.0, 0.0, 3.1, 50.0, 164.0)
 			@lista.insert_head(@carne_vaca)
 			expect(@lista.head[:value].name).to eq("Carne de vaca")
 		end
 
 		it "Insertar por la cola" do
-			@carne_vaca = Alimento.new("Carne de vaca", 21.0, 0.0, 3.1, 50.0, 164.0)
                         @lista.insert_tail(@carne_vaca)
                         expect(@lista.tail[:value].name).to eq("Carne de vaca")
 		end
+
+		it "Extraer por la cabeza" do
+                        @lista.insert_head(@carne_vaca)
+			@lista.extract_head()
+			expect(@lista.head).to be_nil()
+		end
+
 	end
 
 end
