@@ -78,4 +78,48 @@ end
 
 class Eficiencia < Plato
 
+	def initialize(nombre, alimentos, gramos)
+		super(nombre, alimentos, gramos)
+	end
+
+	def get_nombre
+		super
+	end
+
+	def get_alimentos
+		super
+	end
+
+	def get_gramos
+		super
+	end
+
+	def get_gasesD
+		(get_gasesA / 365).round(2)
+	end
+
+	def get_gasesA
+		aux_gases = @alimentos.get_head()
+                aux_gr = @gramos.get_head()
+                gases_t = 0
+                while !aux_gases.nil?
+                        gases_t += (aux_gases[:value].porcion_gases(aux_gr[:value]))
+                        aux_gases = aux_gases[:next]
+                        aux_gr = aux_gr[:next]
+                end
+                gases_t.round(2)
+	end
+
+	def get_terreno
+		aux_terreno = @alimentos.get_head()
+		aux_gr = @gramos.get_head()
+                terreno_t = 0
+                while !aux_terreno.nil?
+                        terreno_t += (aux_terreno[:value].porcion_terreno(aux_gr[:value]))
+                        aux_terreno = aux_terreno[:next]
+                        aux_gr = aux_gr[:next]
+                end
+		terreno_t.round(2)
+
+	end	
 end

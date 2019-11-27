@@ -418,11 +418,23 @@ RSpec.describe Plato do
                         @alimentos.insert_group([@carne_vaca, @lentejas])
                         @gramos = Lista.new(nil, nil)
                         @gramos.insert_group([100, 100])
-               #         @eficiencia = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
+                        @eficiencia = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
 		end
 
 		it "Instanciar un objeto Eficiencia" do
 			@eficiencia_ejemplo = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
+		end
+
+		it "Obtener cantidad de gases anuales generados" do
+			expect(@eficiencia.get_gasesA()).to eq(5.04)
+		end
+
+		it "Obtener cantidad de gases diarios generados" do
+			expect(@eficiencia.get_gasesD()).to eq(0.01)
+		end
+
+		it "Obtener uso del terreno anual" do
+			expect(@eficiencia.get_terreno()).to eq(16.74)
 		end
 				
 	end
