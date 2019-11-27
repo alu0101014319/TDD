@@ -366,6 +366,9 @@ RSpec.describe Lista do
 	end
 end
 
+
+
+##############################################################################################################
 RSpec.describe Plato do
 	context "Información del plato" do
 		before (:all) do
@@ -406,5 +409,23 @@ RSpec.describe Plato do
 			expect(@plato.to_s()).to eq("(Carne y lentejas, (Carne, 21.1, 0.0, 3.1, 50.0, 164.0) (Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4) , (100 100 ))")
 		end
 	end
+
+	context "Jerarquía de clases. Clase Eficiencia energética" do
+		before (:all) do
+			@carne_vaca = Alimento.new("Carne", 21.1, 0.0, 3.1, 50.0, 164.0)
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
+                        @alimentos = Lista.new(nil, nil)
+                        @alimentos.insert_group([@carne_vaca, @lentejas])
+                        @gramos = Lista.new(nil, nil)
+                        @gramos.insert_group([100, 100])
+               #         @eficiencia = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
+		end
+
+		it "Instanciar un objeto Eficiencia" do
+			@eficiencia_ejemplo = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
+		end
+				
+	end
+
 
 end

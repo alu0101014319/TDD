@@ -75,3 +75,7 @@ class Plato
 		"(#{@nombre}, #{@alimentos.show_list}, (#{@gramos.show_list}))"
 	end
 end
+
+class Eficiencia < Plato
+
+end
