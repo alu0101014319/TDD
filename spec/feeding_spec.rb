@@ -353,7 +353,11 @@ RSpec.describe Lista do
 		end	
 		
 		it "Collect. Restar 10 unidades a las kcal" do
-                        expect(@enumerable.collect{ |x| x.kcal - 10}).to eq([102.3, 304.6])
+			expect(@enumerable.collect{ |x| x.kcal - 10}).to eq([102.3, 304.6])
+		end
+
+		it "Select. Seleccionar alimentos con kcal pares" do
+			expect(@enumerable.select{ |x| x.kcal.to_i.even?}).to eq([@carne_vaca, @lentejas])
 		end
 	end
 end
