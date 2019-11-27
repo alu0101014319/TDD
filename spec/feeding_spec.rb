@@ -325,6 +325,11 @@ RSpec.describe Lista do
 	       it "Operador !=" do
                        expect(@carne_vaca != @lentejas).to eq(true)
                end
+
+	       it "Operador between?" do
+		       @carne_cordero = Alimento.new("Carne de cordero", 18.0,0.0,17.0,20.0,185.0)
+		       expect(@carne_cordero.between?(@carne_vaca, @lentejas)).to eq(true)
+	       end
  	end
 end
 
