@@ -367,6 +367,21 @@ RSpec.describe Lista do
 end
 
 RSpec.describe Plato do
+	context "Información del plato" do
+		before (:all) do
+			@carne_vaca = Alimento.new("Carne", 21.1, 0.0, 3.1, 50.0, 164.0)
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
+                        @alimentos = Lista.new(nil, nil)
+                        @alimentos.insert_group([@carne_vaca, @lentejas])
+                        @gramos = Lista.new(nil, nil)
+                        @gramos.insert_group([100, 100])
+                   #     @plato = Plato.new("Carne y lentejas", @alimentos, @gramos)
+		end
+
+		it "Instanciar un objeto plato" do
+			@plato_ejemplo = Plato.new("Carne y lentejas", @alimentos, @gramos)
+		end
+	end
 
 
 end
