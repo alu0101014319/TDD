@@ -1,5 +1,8 @@
 class Alimento
+	
 	attr_reader :no, :pr, :ca, :li, :gei, :te 
+	include Comparable
+
 	def initialize(no,pr,ca,li,gei,te)
 		@no = no
 		@pr = pr
@@ -56,5 +59,9 @@ class Alimento
 
 	def porcion_terreno(gramos)
 		metros = ((gramos * @te) / 1000).round(2)
+	end
+
+	def <=>(other)
+		kcal <=> other.kcal
 	end
 end

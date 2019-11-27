@@ -296,4 +296,17 @@ RSpec.describe Lista do
 
         end
 
+	context "Comparar kcal de alimentos con Comparable" do
+               before(:each) do
+		       @carne_vaca = Alimento.new("Carne de vaca", 21.1,0.0,3.1,50.0,164.0)
+		       @lentejas = Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+	       end
+
+	       it "Operador <" do
+                       expect(@carne_vaca < @lentejas).to eq(false)
+               end
+       end
+
+
 end
+
