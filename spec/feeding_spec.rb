@@ -341,7 +341,7 @@ RSpec.describe Lista do
 		end
 
 		it "Obtener alimento con menos kcal" do
-			expect(@enumerable.min).to eq(@lentejas)
+			expect(@enumerable.min).to eq(@carne_vaca)
 		end
 	end
 end
