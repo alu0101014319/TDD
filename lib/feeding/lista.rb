@@ -104,7 +104,7 @@ class Lista
 		else
 			aux = @head
 			while !aux.nil?
-				lista << aux[:value].to_s
+				lista << aux[:value].to_s + " "
 				aux = aux[:next]
 			end
 		end

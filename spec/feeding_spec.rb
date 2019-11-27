@@ -219,7 +219,7 @@ RSpec.describe Lista do
 			@camarones = Alimento.new("Camarones", 17.6,1.5,0.6,18.0,2.0)
 
                         @lista.insert_group([@carne_vaca, @carne_cordero, @camarones])
-			expect(@lista.show_list()).to eq("(Carne de vaca, 21.1, 0.0, 3.1, 50.0, 164.0)(Carne de cordero, 18.0, 0.0, 17.0, 20.0, 185.0)(Camarones, 17.6, 1.5, 0.6, 18.0, 2.0)")
+			expect(@lista.show_list()).to eq("(Carne de vaca, 21.1, 0.0, 3.1, 50.0, 164.0) (Carne de cordero, 18.0, 0.0, 17.0, 20.0, 185.0) (Camarones, 17.6, 1.5, 0.6, 18.0, 2.0) ")
 
 		end
 	end			
@@ -396,6 +396,14 @@ RSpec.describe Plato do
 
 		it "Obtener porcentaje de lípidos" do 
                         expect(@plato.get_lpd()).to eq(2.25)
+		end
+
+		it "Obtener número de kcal del plato" do
+			expect(@plato.get_kcal()).to eq(426.9)
+		end
+
+		it "Obtener el plato formateado" do
+			expect(@plato.to_s()).to eq("(Carne y lentejas, (Carne, 21.1, 0.0, 3.1, 50.0, 164.0) (Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4) , (100 100 ))")
 		end
 	end
 

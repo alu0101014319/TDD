@@ -61,4 +61,17 @@ class Plato
                 ((lipidos_t / gramos_t) * 100).round(2)
         end
 
+	def get_kcal
+		aux = @alimentos.get_head()
+		kcal = 0
+		while !aux.nil?
+			kcal  += (aux[:value].proteina * 4 + aux[:value].carbohidratos * 4 + aux[:value].lipidos * 9).round(2)
+			aux = aux[:next]
+		end
+		kcal.round(2)
+	end
+
+	def to_s
+		"(#{@nombre}, #{@alimentos.show_list}, (#{@gramos.show_list}))"
+	end
 end
