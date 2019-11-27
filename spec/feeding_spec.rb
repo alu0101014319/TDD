@@ -359,6 +359,10 @@ RSpec.describe Lista do
 		it "Select. Seleccionar alimentos con kcal pares" do
 			expect(@enumerable.select{ |x| x.kcal.to_i.even?}).to eq([@carne_vaca, @lentejas])
 		end
+
+		it "Detect. Detectar alimento con proteína impar y uso del terreno par" do
+                        expect(@enumerable.detect{ |x| x.proteina.to_i.odd? && x.terreno.to_i.even?}).to eq(@carne_vaca)
+		end			
 	end
 end
 
