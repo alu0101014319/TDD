@@ -343,6 +343,15 @@ RSpec.describe Lista do
 		it "Obtener alimento con menos kcal" do
 			expect(@enumerable.min).to eq(@carne_vaca)
 		end
+
+                it "Obtener alimento con más kcal" do
+                        expect(@enumerable.max).to eq(@lentejas)
+                end
+		
+		it "Ordenar lista por cantidad de kcal" do
+			expect(@enumerable.sort).to eq([@carne_vaca, @lentejas])
+		end	
+		
 	end
 end
 
