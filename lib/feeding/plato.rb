@@ -121,5 +121,11 @@ class Eficiencia < Plato
                 end
 		terreno_t.round(2)
 
-	end	
+	end
+
+	def to_s
+		super + "(#{get_gasesA}, #{get_gasesD}, #{get_terreno})"
+
+	end
+	
 end

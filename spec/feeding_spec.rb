@@ -436,6 +436,10 @@ RSpec.describe Plato do
 		it "Obtener uso del terreno anual" do
 			expect(@eficiencia.get_terreno()).to eq(16.74)
 		end
+
+		it "Eficiencia del plato formateada" do
+			expect(@eficiencia.to_s).to eq("(Carne y lentejas, (Carne, 21.1, 0.0, 3.1, 50.0, 164.0) (Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4) , (100 100 ))(5.04, 0.01, 16.74)")
+		end
 				
 	end
 
