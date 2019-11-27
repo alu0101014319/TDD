@@ -331,5 +331,18 @@ RSpec.describe Lista do
 		       expect(@carne_cordero.between?(@carne_vaca, @lentejas)).to eq(true)
 	       end
  	end
+
+	context "Enumerar listas de alimentos con Enumerable" do
+		before(:each) do
+                       @carne_vaca = Alimento.new("Carne de vaca", 21.1,0.0,3.1,50.0,164.0)
+                       @lentejas = Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+		       @enumerable = Lista.new(nil,nil)
+		       @enumerable.insert_group([@carne_vaca, @lentejas])
+		end
+
+		it "Obtener alimento con menos kcal" do
+			expect(@enumerable.min).to eq(@lentejas)
+		end
+	end
 end
 

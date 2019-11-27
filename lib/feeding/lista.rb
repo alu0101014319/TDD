@@ -3,6 +3,7 @@ Node = Struct.new(:value, :next, :prev)
 class Lista
 	
 	attr_accessor :node, :head, :tail	
+	include Enumerable
 
 	def initialize(head, tail)
 		@head = head
@@ -139,4 +140,12 @@ class Lista
 		gases_d = (gases / 365).round(3)
 		gases_d
 	end
+       	
+	def each
+		i = @head
+                while !i.nil?
+                        yield i[:value]
+                        i = i[:next]
+                end
+        end
 end
