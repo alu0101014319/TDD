@@ -443,5 +443,35 @@ RSpec.describe Plato do
 				
 	end
 
+	context "Pruebas de instancias/pertenencias de clase" do
+		before (:all) do
+                        @carne_vaca = Alimento.new("Carne", 21.1, 0.0, 3.1, 50.0, 164.0)
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)
+                        @alimentos = Lista.new(nil, nil)
+                        @alimentos.insert_group([@carne_vaca, @lentejas])
+                        @gramos = Lista.new(nil, nil)
+                        @gramos.insert_group([100, 100])
+                        @eficiencia = Eficiencia.new("Carne y lentejas", @alimentos, @gramos)
+		end
+		
+		it "Clase de un objeto" do
+			expect(@eficiencia.class == Eficiencia).to eq(true)
+		end
+
+		it "Instancia de una clase" do
+			expect(@eficiencia.instance_of? Eficiencia).to eq(true)
+                        expect(@eficiencia.instance_of? Plato).to eq(false)
+		end
+
+		it "Objeto de una clase" do
+			expect(@eficiencia.is_a? BasicObject).to eq(true)
+			expect(@eficiencia.is_a? Object).to eq(true)
+		end
+
+		it "Objeto tipo de una clase" do
+			expect(@eficiencia.kind_of? Plato).to eq(true)
+		end
+	end
+
 
 end
