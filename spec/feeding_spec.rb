@@ -303,7 +303,7 @@ RSpec.describe Lista do
 	       end
 
 	       it "Operador <" do
-                       expect(@carne_vaca < @lentejas).to eq(false)
+                       expect(@carne_vaca < @lentejas).to eq(true)
                end
        end
 
