@@ -366,3 +366,7 @@ RSpec.describe Lista do
 	end
 end
 
+RSpec.describe Plato do
+
+
+end
