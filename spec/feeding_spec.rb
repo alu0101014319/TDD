@@ -375,13 +375,28 @@ RSpec.describe Plato do
                         @alimentos.insert_group([@carne_vaca, @lentejas])
                         @gramos = Lista.new(nil, nil)
                         @gramos.insert_group([100, 100])
-                   #     @plato = Plato.new("Carne y lentejas", @alimentos, @gramos)
+                        @plato = Plato.new("Carne y lentejas", @alimentos, @gramos)
 		end
 
 		it "Instanciar un objeto plato" do
 			@plato_ejemplo = Plato.new("Carne y lentejas", @alimentos, @gramos)
 		end
-	end
 
+		it "Obtener nombre del plato" do
+			expect(@plato.get_nombre()).to eq("Carne y lentejas")
+		end
+
+		it "Obtener porcentaje de proteínas" do
+			expect(@plato.get_prt()).to eq(22.3)
+		end
+
+		it "Obtener porcentaje de carbohidratos" do
+                        expect(@plato.get_cbh()).to eq(26)			
+		end
+
+		it "Obtener porcentaje de lípidos" do 
+                        expect(@plato.get_lpd()).to eq(2.25)
+		end
+	end
 
 end
