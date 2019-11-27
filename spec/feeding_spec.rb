@@ -309,6 +309,11 @@ RSpec.describe Lista do
 	       it "Operador >" do
 		       expect(@carne_vaca > @lentejas).to eq(false)
 	       end
+
+	       it "Operador ==" do
+                       expect(@carne_vaca == @lentejas).to eq(false)
+               end
+
        end
 
 
