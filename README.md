@@ -9,3 +9,9 @@ Práctica 7: POO. Listas
 Autor: Eduardo Estévez Rodríguez
 
 Descripción: Continuando la práctica anterior, nos dispondremos a generar diferentes dietas con sus respectivos porcentajes de nutrientes mediante la ayuda de listas doblemente enlazadas.
+
+Práctica 8: Herencia. Módulos
+
+Autor: Eduardo Estévez Rodríguez
+
+Descripción: Continuando con la práctica número 7, nos disponemos a generar platos con los alimentos de las dietas que diseñamos para calcular así su informaciń nutricional y eficiencia energética.
