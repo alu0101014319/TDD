@@ -737,6 +737,26 @@ RSpec.describe Plato do
                         expect(@eficienciaLC != @eficienciaPV).to eq(true)
 
                 end
+
+		it "Enumerar dieta Carnívora" do
+                        @dieta_car = Lista.new(nil, nil)
+                        @dieta_car.insert_group([@platoPV, @platoLC])
+                        expect(@dieta_car.min).to eq(@platoPV)
+                        expect(@dieta_car.max).to eq(@platoLC)
+                        expect(@dieta_car.sort).to eq([@platoPV, @platoLC])
+			expect(@dieta_car.collect{|x| x.get_kcal + 10}).to eq([1235.5, 1667.3])
+                        expect(@dieta_car.select{|x| x.get_kcal.to_i.even?}).to eq([])
+
+                        @ef_car = Lista.new(nil, nil)
+                        @ef_car.insert_group([@eficienciaPV, @eficienciaLC])
+                        expect(@ef_car.min).to eq(@eficienciaLC)
+                        expect(@ef_car.max).to eq(@eficienciaPV)
+                        expect(@ef_car.sort).to eq([@eficienciaLC, @eficienciaPV])
+			expect(@ef_car.collect{|x| x.get_kcal + 10}).to eq([1235.5, 1667.3])
+                        expect(@ef_car.select{|x| x.get_kcal.to_i.even?}).to eq([])
+
+                end
+
 	end
 
 
