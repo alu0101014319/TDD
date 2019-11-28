@@ -473,5 +473,42 @@ RSpec.describe Plato do
 		end
 	end
 
+	context "Comparar platos de la dieta Española" do
+		before (:all) do
+			@lentejas_esp = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
+			@nueces_esp = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#200g
+			@leche_esp = Alimento.new("Leche", 3.3, 4.8, 3.2, 3.2, 8.9)#300gr
+		     	@chocolate_esp = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#100gr
+			@camarones_esp = Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)#200gr
+			@alimentosLC = Lista.new(nil,nil)
+                        @alimentosLC.insert_group([@lentejas_esp, @camarones_esp])
+                        @gramosLC = Lista.new(nil,nil)
+                        @gramosLC.insert_group([300, 200])
+
+			@platoLC = Plato.new("Lentejas y camarones", @alimentosLC, @gramosLC)
+			@eficienciaLC = Eficiencia.new("Lentejas y camarones", @alimentosLC, @gramosLC)
+
+			@alimentosNLC = Lista.new(nil,nil)
+                        @alimentosNLC.insert_group([@nueces_esp, @leche_esp, @chocolate_esp])
+                        @gramosNLC = Lista.new(nil,nil)
+                        @gramosNLC.insert_group([200, 300, 100])
+
+			@platoNLC = Plato.new("Postre de chocolate y nueces", @alimentosNLC, @gramosNLC)
+			@eficienciaNLC = Eficiencia.new("Postre de chocolate y nueces", @alimentosNLC, @gramosNLC)
+		end
+
+		it "Comparación de valor nutricional y eficiencia" do
+			expect(@platoNLC > @platoLC).to eq(true)
+ 			expect(@platoNLC < @platoLC).to eq(false)
+ 			expect(@platoNLC == @platoNLC).to eq(true)
+ 			expect(@platoNLC != @platoLC).to eq(true)
+			
+			expect(@eficienciaNLC > @eficienciaLC).to eq(false)
+                        expect(@eficienciaNLC < @eficienciaLC).to eq(true)
+                        expect(@eficienciaNLC == @eficienciaNLC).to eq(true)
+                        expect(@eficienciaNLC != @eficienciaLC).to eq(true)
+		end
+	end
+
 
 end

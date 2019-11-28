@@ -1,5 +1,7 @@
 class Plato
+	
 	attr_reader :nombre, :alimentos, :gramos
+	include Comparable
 
 	def initialize(nombre, alimentos, gramos)
 		@nombre = nombre
@@ -74,9 +76,17 @@ class Plato
 	def to_s
 		"(#{@nombre}, #{@alimentos.show_list}, (#{@gramos.show_list}))"
 	end
+
+
+	def <=>(other)
+		get_kcal <=> other.get_kcal
+	end
+
 end
 
 class Eficiencia < Plato
+
+	include Comparable
 
 	def initialize(nombre, alimentos, gramos)
 		super(nombre, alimentos, gramos)
@@ -127,5 +137,8 @@ class Eficiencia < Plato
 		super + "(#{get_gasesA}, #{get_gasesD}, #{get_terreno})"
 
 	end
-	
+
+	def <=>(other)
+		get_gasesD <=> other.get_gasesD
+	end	
 end
