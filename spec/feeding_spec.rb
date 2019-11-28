@@ -586,6 +586,42 @@ RSpec.describe Plato do
                 end
 	end
 
+	context "Comparar platos de la dieta Vegetaliana" do
+                before (:all) do
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#500gr
+			@tofu = Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)#200gr
+			@nueces = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#100g
 
+                        @alimentosL = Lista.new(nil,nil)
+                        @alimentosL.insert_group([@lentejas])
+                        @gramosL = Lista.new(nil,nil)
+                        @gramosL.insert_group([500])
+
+                        @platoL = Plato.new("Lentejas", @alimentosL, @gramosL)
+                        @eficienciaL = Eficiencia.new("Lentejas", @alimentosL, @gramosL)
+
+                        @alimentosTN = Lista.new(nil,nil)
+                        @alimentosTN.insert_group([@tofu, @nueces])
+                        @gramosTN = Lista.new(nil,nil)
+                        @gramosTN.insert_group([200, 100])
+
+                        @platoTN = Plato.new("Tofu y nueces", @alimentosTN, @gramosTN)
+                        @eficienciaTN = Eficiencia.new("Tofu y nueces", @alimentosTN, @gramosTN)
+                end
+		
+   		it "Comparación del valor nutricional y eficiencia" do
+                        expect(@platoL > @platoTN).to eq(false)
+                        expect(@platoL < @platoTN).to eq(true)
+                        expect(@platoTN == @platoTN).to eq(true)
+                        expect(@platoL != @platoTN).to eq(true)
+
+                        expect(@eficienciaL >= @eficienciaTN).to eq(true)
+                        expect(@eficienciaL <= @eficienciaTN).to eq(true)
+                        expect(@eficienciaTN == @eficienciaTN).to eq(true)
+                        expect(@eficienciaL != @eficienciaTN).to eq(false)
+
+
+                end
+	end
 
 end
