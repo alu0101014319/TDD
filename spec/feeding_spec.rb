@@ -680,6 +680,25 @@ RSpec.describe Plato do
 
 
                 end
+   
+		it "Enumerar dieta Vegetaliana" do
+                        @dieta_vgl = Lista.new(nil, nil)
+                        @dieta_vgl.insert_group([@platoTN, @platoL])
+                        expect(@dieta_vgl.min).to eq(@platoTN)
+                        expect(@dieta_vgl.max).to eq(@platoL)
+                        expect(@dieta_vgl.sort).to eq([@platoTN, @platoL])
+			expect(@dieta_vgl.collect{|x| x.get_kcal + 10}).to eq([825.6, 1583.0])
+                        expect(@dieta_vgl.select{|x| x.get_kcal.to_i.even?}).to eq([])
+
+                        @ef_vgl = Lista.new(nil, nil)
+                        @ef_vgl.insert_group([@eficienciaTN, @eficienciaL])
+                        expect(@ef_vgl.min).to eq(@eficienciaTN)
+                        expect(@ef_vgl.max).to eq(@eficienciaL)
+                        expect(@ef_vgl.sort).to eq([@eficienciaTN, @eficienciaL])
+			expect(@ef_vgl.collect{|x| x.get_kcal + 10}).to eq([825.6, 1583.0])
+                        expect(@ef_vgl.select{|x| x.get_kcal.to_i.even?}).to eq([])
+
+                end
 	end
 
 	context "Comparar platos de la dieta Carnívora" do
