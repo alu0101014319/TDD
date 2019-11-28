@@ -487,7 +487,7 @@ RSpec.describe Plato do
 
 			@platoLC = Plato.new("Lentejas y camarones", @alimentosLC, @gramosLC)
 			@eficienciaLC = Eficiencia.new("Lentejas y camarones", @alimentosLC, @gramosLC)
-
+			
 			@alimentosNLC = Lista.new(nil,nil)
                         @alimentosNLC.insert_group([@nueces, @leche, @chocolate])
                         @gramosNLC = Lista.new(nil,nil)
@@ -507,6 +507,25 @@ RSpec.describe Plato do
                         expect(@eficienciaNLC < @eficienciaLC).to eq(true)
                         expect(@eficienciaNLC == @eficienciaNLC).to eq(true)
                         expect(@eficienciaNLC != @eficienciaLC).to eq(true)
+		end
+
+		it "Enumerar dieta Española" do
+			@dieta_española = Lista.new(nil, nil)
+			@dieta_española.insert_group([@platoNLC, @platoLC])
+			expect(@dieta_española.min).to eq(@platoLC)
+			expect(@dieta_española.max).to eq(@platoNLC)
+			expect(@dieta_española.sort).to eq([@platoLC, @platoNLC])
+			expect(@dieta_española.collect{|x| x.get_kcal + 10}).to eq([1972.8, 1117.4])
+			expect(@dieta_española.select{|x| x.get_kcal.to_i.even?}).to eq([@platoNLC])
+
+			@ef_española = Lista.new(nil, nil)
+                        @ef_española.insert_group([@eficienciaNLC, @eficienciaLC])
+                        expect(@ef_española.min).to eq(@eficienciaNLC)
+                        expect(@ef_española.max).to eq(@eficienciaLC)
+                        expect(@ef_española.sort).to eq([@eficienciaNLC, @eficienciaLC])
+                        expect(@ef_española.collect{|x| x.get_kcal + 10}).to eq([1972.8, 1117.4])
+                        expect(@ef_española.select{|x| x.get_kcal.to_i.even?}).to eq([@eficienciaNLC])
+
 		end
 	end
 
@@ -573,8 +592,8 @@ RSpec.describe Plato do
                 end
 
    		it "Comparación del valor nutricional y eficiencia" do
-                        expect(@platoL > @platoLH).to eq(false)
-                        expect(@platoL < @platoLH).to eq(true)
+                        expect(@platoL > @platoLH).to eq(true)
+                        expect(@platoL < @platoLH).to eq(false)
                         expect(@platoLH == @platoLH).to eq(true)
                         expect(@platoL != @platoLH).to eq(true)
 
@@ -610,8 +629,8 @@ RSpec.describe Plato do
                 end
 		
    		it "Comparación del valor nutricional y eficiencia" do
-                        expect(@platoL > @platoTN).to eq(false)
-                        expect(@platoL < @platoTN).to eq(true)
+                        expect(@platoL > @platoTN).to eq(true)
+                        expect(@platoL < @platoTN).to eq(false)
                         expect(@platoTN == @platoTN).to eq(true)
                         expect(@platoL != @platoTN).to eq(true)
 

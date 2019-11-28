@@ -65,10 +65,12 @@ class Plato
 
 	def get_kcal
 		aux = @alimentos.get_head()
+		aux_gr = @gramos.get_head()
 		kcal = 0
 		while !aux.nil?
-			kcal  += (aux[:value].proteina * 4 + aux[:value].carbohidratos * 4 + aux[:value].lipidos * 9).round(2)
+			kcal  += (aux_gr[:value] / 100) * (aux[:value].proteina * 4 + aux[:value].carbohidratos * 4 + aux[:value].lipidos * 9).round(2)
 			aux = aux[:next]
+			aux_gr = aux_gr[:next]
 		end
 		kcal.round(2)
 	end
