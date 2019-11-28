@@ -430,7 +430,7 @@ RSpec.describe Plato do
 		end
 
 		it "Obtener cantidad de gases diarios generados" do
-			expect(@eficiencia.get_gasesD()).to eq(0.01)
+			expect(@eficiencia.get_gasesD()).to eq(0.014)
 		end
 
 		it "Obtener uso del terreno anual" do
@@ -438,7 +438,7 @@ RSpec.describe Plato do
 		end
 
 		it "Eficiencia del plato formateada" do
-			expect(@eficiencia.to_s).to eq("(Carne y lentejas, (Carne, 21.1, 0.0, 3.1, 50.0, 164.0) (Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4) , (100 100 ))(5.04, 0.01, 16.74)")
+			expect(@eficiencia.to_s).to eq("(Carne y lentejas, (Carne, 21.1, 0.0, 3.1, 50.0, 164.0) (Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4) , (100 100 ))(5.04, 0.014, 16.74)")
 		end
 				
 	end
@@ -475,13 +475,13 @@ RSpec.describe Plato do
 
 	context "Comparar platos de la dieta Española" do
 		before (:all) do
-			@lentejas_esp = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
-			@nueces_esp = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#200g
-			@leche_esp = Alimento.new("Leche", 3.3, 4.8, 3.2, 3.2, 8.9)#300gr
-		     	@chocolate_esp = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#100gr
-			@camarones_esp = Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)#200gr
+			@lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
+			@nueces = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#200g
+			@leche = Alimento.new("Leche", 3.3, 4.8, 3.2, 3.2, 8.9)#300gr
+		     	@chocolate = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#100gr
+			@camarones = Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)#200gr
 			@alimentosLC = Lista.new(nil,nil)
-                        @alimentosLC.insert_group([@lentejas_esp, @camarones_esp])
+                        @alimentosLC.insert_group([@lentejas, @camarones])
                         @gramosLC = Lista.new(nil,nil)
                         @gramosLC.insert_group([300, 200])
 
@@ -489,7 +489,7 @@ RSpec.describe Plato do
 			@eficienciaLC = Eficiencia.new("Lentejas y camarones", @alimentosLC, @gramosLC)
 
 			@alimentosNLC = Lista.new(nil,nil)
-                        @alimentosNLC.insert_group([@nueces_esp, @leche_esp, @chocolate_esp])
+                        @alimentosNLC.insert_group([@nueces, @leche, @chocolate])
                         @gramosNLC = Lista.new(nil,nil)
                         @gramosNLC.insert_group([200, 300, 100])
 
@@ -509,6 +509,46 @@ RSpec.describe Plato do
                         expect(@eficienciaNLC != @eficienciaLC).to eq(true)
 		end
 	end
+
+	context "Comparar platos de la dieta Vasca" do
+		before (:all) do
+			@lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
+			@tofu = Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)#100gr
+			@cerveza = Alimento.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22)#200gr
+                        @leche = Alimento.new("Leche", 3.3, 4.8, 3.2, 3.2, 8.9)#300gr
+                        @chocolate = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#200gr
+
+                        @alimentosLC = Lista.new(nil,nil)
+                        @alimentosLC.insert_group([@leche, @chocolate])
+                        @gramosLC = Lista.new(nil,nil)
+                        @gramosLC.insert_group([300, 200])
+
+                        @platoLC = Plato.new("Lecha chocolatada", @alimentosLC, @gramosLC)
+                        @eficienciaLC = Eficiencia.new("Leche chocolatada", @alimentosLC, @gramosLC)
+
+                        @alimentosTLC = Lista.new(nil,nil)
+                        @alimentosTLC.insert_group([@tofu, @lentejas, @cerveza])
+                        @gramosTLC = Lista.new(nil,nil)
+                        @gramosTLC.insert_group([100, 300, 200])
+
+                        @platoTLC = Plato.new("Tofu, Lentejas y cerveza", @alimentosTLC, @gramosTLC)
+                        @eficienciaTLC = Eficiencia.new("Tofu, Lentejas y cerveza", @alimentosTLC, @gramosTLC)
+		end
+
+		it "Comparación del valor nutricional y eficiencia" do
+		        expect(@platoTLC > @platoLC).to eq(false)
+                        expect(@platoTLC < @platoLC).to eq(true)
+                        expect(@platoTLC == @platoTLC).to eq(true)
+                        expect(@platoTLC != @platoLC).to eq(true)
+
+                        expect(@eficienciaTLC > @eficienciaLC).to eq(false)
+                        expect(@eficienciaTLC < @eficienciaLC).to eq(true)
+                        expect(@eficienciaTLC == @eficienciaTLC).to eq(true)
+                        expect(@eficienciaTLC != @eficienciaLC).to eq(true)
+
+		end
+	end
+
 
 
 end

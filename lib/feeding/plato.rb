@@ -105,7 +105,7 @@ class Eficiencia < Plato
 	end
 
 	def get_gasesD
-		(get_gasesA / 365).round(2)
+		(get_gasesA / 365).round(3)
 	end
 
 	def get_gasesA
