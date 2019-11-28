@@ -622,6 +622,26 @@ RSpec.describe Plato do
                         expect(@eficienciaL != @eficienciaLH).to eq(true)
 
                 end
+
+		it "Enumerar dieta Vegetariana" do
+                        @dieta_vgt = Lista.new(nil, nil)
+                        @dieta_vgt.insert_group([@platoLH, @platoL])
+                        expect(@dieta_vgt.min).to eq(@platoLH)
+                        expect(@dieta_vgt.max).to eq(@platoL)
+                        expect(@dieta_vgt.sort).to eq([@platoLH, @platoL])
+			expect(@dieta_vgt.collect{|x| x.get_kcal + 10}).to eq([794.6, 2335.6])
+                        expect(@dieta_vgt.select{|x| x.get_kcal.to_i.even?}).to eq([@platoLH])
+
+                        @ef_vgt = Lista.new(nil, nil)
+                        @ef_vgt.insert_group([@eficienciaLH, @eficienciaL])
+                        expect(@ef_vgt.min).to eq(@eficienciaLH)
+                        expect(@ef_vgt.max).to eq(@eficienciaL)
+                        expect(@ef_vgt.sort).to eq([@eficienciaLH, @eficienciaL])
+			expect(@ef_vgt.collect{|x| x.get_kcal + 10}).to eq([794.6, 2335.6])
+                        expect(@ef_vgt.select{|x| x.get_kcal.to_i.even?}).to eq([@eficienciaLH])
+
+                end
+
 	end
 
 	context "Comparar platos de la dieta Vegetaliana" do
