@@ -566,6 +566,25 @@ RSpec.describe Plato do
                         expect(@eficienciaTLC != @eficienciaLC).to eq(true)
 
 		end
+
+     		it "Enumerar dieta Vasca" do
+                        @dieta_vasca = Lista.new(nil, nil)
+                        @dieta_vasca.insert_group([@platoTLC, @platoLC])
+                        expect(@dieta_vasca.min).to eq(@platoTLC)
+                        expect(@dieta_vasca.max).to eq(@platoLC)
+                        expect(@dieta_vasca.sort).to eq([@platoTLC, @platoLC])
+			expect(@dieta_vasca.collect{|x| x.get_kcal + 10}).to eq([1069.4, 1152.0])
+                        expect(@dieta_vasca.select{|x| x.get_kcal.to_i.even?}).to eq([@platoLC])
+
+                        @ef_vasca = Lista.new(nil, nil)
+                        @ef_vasca.insert_group([@eficienciaTLC, @eficienciaLC])
+                        expect(@ef_vasca.min).to eq(@eficienciaTLC)
+                        expect(@ef_vasca.max).to eq(@eficienciaLC)
+                        expect(@ef_vasca.sort).to eq([@eficienciaTLC, @eficienciaLC])
+			expect(@ef_vasca.collect{|x| x.get_kcal + 10}).to eq([1069.4, 1152.0])
+                        expect(@ef_vasca.select{|x| x.get_kcal.to_i.even?}).to eq([@eficienciaLC])
+
+                end
 	end
 
 	context "Comparar platos de la dieta Vegetariana" do
