@@ -624,4 +624,43 @@ RSpec.describe Plato do
                 end
 	end
 
+	context "Comparar platos de la dieta Carnívora" do
+                before (:all) do
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
+			@vaca = Alimento.new("Carne vaca", 21.1, 0.0, 3.1, 50.0, 164.0)#500gr
+			@pollo = Alimento.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1)#500gr
+			@cerdo = Alimento.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 11.0)#500gr
+
+                        @alimentosLC = Lista.new(nil,nil)
+                        @alimentosLC.insert_group([@lentejas, @cerdo])
+                        @gramosLC = Lista.new(nil,nil)
+                        @gramosLC.insert_group([300, 500])
+
+                        @platoLC = Plato.new("Lentejas y cerdo", @alimentosLC, @gramosLC)
+                        @eficienciaLC = Eficiencia.new("Lentejas y cerdo", @alimentosLC, @gramosLC)
+
+                        @alimentosPV = Lista.new(nil,nil)
+                        @alimentosPV.insert_group([@pollo, @vaca])
+                        @gramosPV = Lista.new(nil,nil)
+                        @gramosPV.insert_group([500,500])
+
+                        @platoPV = Plato.new("Pollo y vaca", @alimentosPV, @gramosPV)
+                        @eficienciaPV = Eficiencia.new("Pollo y vaca", @alimentosPV, @gramosPV)
+                end
+
+                it "Comparación del valor nutricional y eficiencia" do
+                        expect(@platoLC > @platoPV).to eq(true)
+                        expect(@platoLC < @platoPV).to eq(false)
+                        expect(@platoLC == @platoLC).to eq(true)
+                        expect(@platoLC != @platoPV).to eq(true)
+
+                        expect(@eficienciaLC > @eficienciaPV).to eq(false)
+                        expect(@eficienciaLC < @eficienciaPV).to eq(true)
+                        expect(@eficienciaLC == @eficienciaLC).to eq(true)
+                        expect(@eficienciaLC != @eficienciaPV).to eq(true)
+
+                end
+	end
+
+
 end
