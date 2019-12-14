@@ -811,9 +811,9 @@ RSpec.describe Plato do
 
 		it "Incrementar el precio de los platos en base al plato de mayor huella" do
 			mayorHN = @menu.index(@menu.max)             
-			aumento_de_precio = (0.25*@precio[mayorHN]).round(2)         
-                        expect(@precio.collect{ |x| x + aumento_de_precio}).to eq([9.19, 4.94, 6.34])
-
+			aumento_de_precio = (0.25*@precio[mayorHN]).round(2)
+			@precio_aumentado = [9.19, 4.94, 6.34]
+                        expect(@precio.collect{ |x| x + aumento_de_precio}).to eq(@precio_aumentado)
 		end
 
 	end
