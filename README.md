@@ -15,3 +15,9 @@ Práctica 8: Herencia. Módulos
 Autor: Eduardo Estévez Rodríguez
 
 Descripción: Continuando con la práctica número 7, nos disponemos a generar platos con los alimentos de las dietas que diseñamos para calcular así su informaciń nutricional y eficiencia energética.
+
+Práctica 9: Programación funcional. Funciones de orden superior
+
+Autor: Eduardo Estévez Rodríguez
+
+Descripción: A partir de un conjunto de platos que conformen un menú dietético calcularemos la huella nutricional de cada uno de ellos y añadiremos un aumento de precio en base al precio del plato que mayor huella nutricional posea.
