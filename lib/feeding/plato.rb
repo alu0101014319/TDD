@@ -161,6 +161,6 @@ class Eficiencia < Plato
 	end
 
 	def <=>(other)
-		get_gasesD <=> other.get_gasesD
+		hn <=> other.hn
 	end	
 end

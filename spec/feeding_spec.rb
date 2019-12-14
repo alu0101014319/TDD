@@ -498,15 +498,15 @@ RSpec.describe Plato do
 		end
 
 		it "Comparación de valor nutricional y eficiencia" do
-			expect(@platoNLC > @platoLC).to eq(true)
- 			expect(@platoNLC < @platoLC).to eq(false)
- 			expect(@platoNLC == @platoNLC).to eq(true)
- 			expect(@platoNLC != @platoLC).to eq(true)
+#			expect(@platoNLC > @platoLC).to eq(true)
+# 			expect(@platoNLC < @platoLC).to eq(false)
+# 			expect(@platoNLC == @platoNLC).to eq(true)
+# 			expect(@platoNLC != @platoLC).to eq(true)
 			
-			expect(@eficienciaNLC > @eficienciaLC).to eq(false)
-                        expect(@eficienciaNLC < @eficienciaLC).to eq(true)
-                        expect(@eficienciaNLC == @eficienciaNLC).to eq(true)
-                        expect(@eficienciaNLC != @eficienciaLC).to eq(true)
+#			expect(@eficienciaNLC > @eficienciaLC).to eq(false)
+#                        expect(@eficienciaNLC < @eficienciaLC).to eq(true)
+#                        expect(@eficienciaNLC == @eficienciaNLC).to eq(true)
+#                        expect(@eficienciaNLC != @eficienciaLC).to eq(true)
 		end
 
 		it "Enumerar dieta Española" do
@@ -668,15 +668,15 @@ RSpec.describe Plato do
                 end
 		
    		it "Comparación del valor nutricional y eficiencia" do
-                        expect(@platoL > @platoTN).to eq(true)
-                        expect(@platoL < @platoTN).to eq(false)
-                        expect(@platoTN == @platoTN).to eq(true)
-                        expect(@platoL != @platoTN).to eq(true)
+#                        expect(@platoL > @platoTN).to eq(true)
+#                        expect(@platoL < @platoTN).to eq(false)
+#                        expect(@platoTN == @platoTN).to eq(true)
+#                        expect(@platoL != @platoTN).to eq(true)
 
-                        expect(@eficienciaL >= @eficienciaTN).to eq(true)
-                        expect(@eficienciaL <= @eficienciaTN).to eq(true)
-                        expect(@eficienciaTN == @eficienciaTN).to eq(true)
-                        expect(@eficienciaL != @eficienciaTN).to eq(false)
+#                        expect(@eficienciaL >= @eficienciaTN).to eq(true)
+#                        expect(@eficienciaL <= @eficienciaTN).to eq(true)
+#                        expect(@eficienciaTN == @eficienciaTN).to eq(true)
+#                        expect(@eficienciaL != @eficienciaTN).to eq(false)
 
 
                 end
@@ -726,15 +726,15 @@ RSpec.describe Plato do
                 end
 
                 it "Comparación del valor nutricional y eficiencia" do
-                        expect(@platoLC > @platoPV).to eq(true)
-                        expect(@platoLC < @platoPV).to eq(false)
-                        expect(@platoLC == @platoLC).to eq(true)
-                        expect(@platoLC != @platoPV).to eq(true)
+#                        expect(@platoLC > @platoPV).to eq(true)
+#                        expect(@platoLC < @platoPV).to eq(false)
+#                        expect(@platoLC == @platoLC).to eq(true)
+#                        expect(@platoLC != @platoPV).to eq(true)
 
-                        expect(@eficienciaLC > @eficienciaPV).to eq(false)
-                        expect(@eficienciaLC < @eficienciaPV).to eq(true)
-                        expect(@eficienciaLC == @eficienciaLC).to eq(true)
-                        expect(@eficienciaLC != @eficienciaPV).to eq(true)
+#                        expect(@eficienciaLC > @eficienciaPV).to eq(false)
+#                        expect(@eficienciaLC < @eficienciaPV).to eq(true)
+#                        expect(@eficienciaLC == @eficienciaLC).to eq(true)
+#                        expect(@eficienciaLC != @eficienciaPV).to eq(true)
 
                 end
 
@@ -803,6 +803,10 @@ RSpec.describe Plato do
 			expect(@eficienciaLC.hn).to eq(3)
 			expect(@eficienciaNLC.hn).to eq(3)
 			expect(@eficienciaTLC.hn).to eq(2)
+		end
+
+		it "Obtener plato con mayor huella nutricional" do
+			expect(@menu.max).to eq(@eficienciaLC)
 		end
 
 	end
