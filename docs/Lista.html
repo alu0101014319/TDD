@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Lista - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-extract_head">#extract_head</a>
+    
+    <li ><a href="#method-i-extract_tail">#extract_tail</a>
+    
+    <li ><a href="#method-i-gases_anuales">#gases_anuales</a>
+    
+    <li ><a href="#method-i-gases_diarios">#gases_diarios</a>
+    
+    <li ><a href="#method-i-get_head">#get_head</a>
+    
+    <li ><a href="#method-i-get_size">#get_size</a>
+    
+    <li ><a href="#method-i-get_tail">#get_tail</a>
+    
+    <li ><a href="#method-i-insert_group">#insert_group</a>
+    
+    <li ><a href="#method-i-insert_head">#insert_head</a>
+    
+    <li ><a href="#method-i-insert_tail">#insert_tail</a>
+    
+    <li ><a href="#method-i-show_list">#show_list</a>
+    
+    <li ><a href="#method-i-terreno_anual">#terreno_anual</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Lista">
+  <h1 id="class-Lista" class="class">
+    class Lista
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-head" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">head</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Se ha incluido el mixin Enumerable</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-node" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">node</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Se ha incluido el mixin Enumerable</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tail" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tail</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Se ha incluido el mixin Enumerable</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(head, tail)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Se asigna la cabeza y la cola de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">head</span>, <span class="ruby-identifier">tail</span>)
+        <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">head</span>
+        <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">tail</span>
+        <span class="ruby-ivar">@size</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |i| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Se incluye el método del mixin Enumerable Se define como una iteración sobre la cabeza de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+        <span class="ruby-identifier">i</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-keyword">yield</span> <span class="ruby-identifier">i</span>[<span class="ruby-value">:value</span>]
+                <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span>[<span class="ruby-value">:next</span>]
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extract_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_head</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extrae un nodo por la cabeza</p>
+          
+          
+
+          
+          <div class="method-source-code" id="extract_head-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_head</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Lista vacía&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>
+                        <span class="ruby-ivar">@size</span> = <span class="ruby-value">0</span>
+                        <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+                        <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-ivar">@size</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
+                        <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">aux</span>[<span class="ruby-value">:next</span>]
+                        <span class="ruby-ivar">@head</span>[<span class="ruby-value">:prev</span>] = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extract_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_tail</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extrae un nodo por la cola</p>
+          
+          
+
+          
+          <div class="method-source-code" id="extract_tail-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_tail</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Lista vacía&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>
+                        <span class="ruby-ivar">@size</span> = <span class="ruby-value">0</span>
+                        <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+                        <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-ivar">@size</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@tail</span>
+                        <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">aux</span>[<span class="ruby-value">:prev</span>]
+                        <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:next</span>] = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gases_anuales" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gases_anuales</span><span
+            class="method-args">(gramos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve la cantidad de gases anuales que emiten todos los alimentos que contiene la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="gases_anuales-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gases_anuales</span>(<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-identifier">gases</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">iterator</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">aux</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">gases</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">aux</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">porcion_gases</span>(<span class="ruby-identifier">gramos</span>[<span class="ruby-identifier">iterator</span>])
+                <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">aux</span>[<span class="ruby-value">:next</span>]
+                <span class="ruby-identifier">iterator</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">gases</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gases_diarios" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gases_diarios</span><span
+            class="method-args">(gramos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve la cantidad de gases diarios que emiten todos los alimentos de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="gases_diarios-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gases_diarios</span>(<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-identifier">gases</span> = <span class="ruby-identifier">gases_anuales</span>(<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-identifier">gases_d</span> = (<span class="ruby-identifier">gases</span> <span class="ruby-operator">/</span> <span class="ruby-value">365</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">3</span>)
+        <span class="ruby-identifier">gases_d</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_head</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve el nodo que contiene la cabeza de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_head-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_head</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Lista vacía&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_size</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve el tamaño de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_size-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_size</span>
+        <span class="ruby-ivar">@size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_tail</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve el nodo que contiene la cola de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_tail-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_tail</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Lista vacía&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@tail</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_group" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_group</span><span
+            class="method-args">(v_nodes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta varios nodos de una vez y se quedan en la lista en el orden en el que llegaron</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_group-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_group</span>(<span class="ruby-identifier">v_nodes</span>)
+        <span class="ruby-identifier">v_nodes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nodo</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">insert_tail</span>(<span class="ruby-identifier">nodo</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_head</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta un nodo por la cabeza</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_head-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span>(<span class="ruby-identifier">node</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-ivar">@size</span> = <span class="ruby-value">1</span>
+                <span class="ruby-ivar">@head</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+                <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@size</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
+                <span class="ruby-ivar">@head</span>[<span class="ruby-value">:prev</span>] = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">aux</span>, <span class="ruby-keyword">nil</span>)
+                <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@head</span>[<span class="ruby-value">:prev</span>]
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_tail</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta un nodo por la cola</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_tail-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail</span>(<span class="ruby-identifier">node</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-ivar">@size</span> = <span class="ruby-value">1</span>
+                <span class="ruby-ivar">@head</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+                <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@size</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@tail</span>
+                <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:next</span>] = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">aux</span>)
+                <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:next</span>]
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Muestra la lista formateada</p>
+          
+          
+
+          
+          <div class="method-source-code" id="show_list-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show_list</span>
+        <span class="ruby-identifier">lista</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Lista vacía&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
+                <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">aux</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">lista</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">aux</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; &quot;</span>
+                        <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">aux</span>[<span class="ruby-value">:next</span>]
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">lista</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-terreno_anual" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">terreno_anual</span><span
+            class="method-args">(gramos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve la cantidad de terreno que usan todos los alimentos de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="terreno_anual-source">
+            <pre><span class="ruby-comment"># File lib/feeding/lista.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">terreno_anual</span>(<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-identifier">terreno</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">iterator</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">aux</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">terreno</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">aux</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">porcion_terreno</span>(<span class="ruby-identifier">gramos</span>[<span class="ruby-identifier">iterator</span>])
+                <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">aux</span>[<span class="ruby-value">:next</span>]
+                <span class="ruby-identifier">iterator</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">terreno</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
