@@ -140,6 +140,26 @@ class Eficiencia < Plato
 
 	end
 
+	def hn
+       		if (get_kcal < 670)
+                        v_kcal = 1
+                elsif (get_kcal > 830)
+                        v_kcal = 3
+                else
+                        v_kcal = 2
+                end
+
+                if (get_gasesA < 0.8)
+                        v_gases = 1
+                elsif (get_gasesA > 1.2)
+                    	v_gases = 3
+                else
+                        v_gases = 1
+                end
+		
+		((v_kcal + v_gases)/2.0).round(2)
+	end
+
 	def <=>(other)
 		get_gasesD <=> other.get_gasesD
 	end	

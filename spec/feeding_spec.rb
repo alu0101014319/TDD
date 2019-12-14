@@ -799,6 +799,12 @@ RSpec.describe Plato do
 
 		end
 
+		it "Calcular la huella nutricional" do
+			expect(@eficienciaLC.hn).to eq(3)
+			expect(@eficienciaNLC.hn).to eq(3)
+			expect(@eficienciaTLC.hn).to eq(2)
+		end
+
 	end
 
 
