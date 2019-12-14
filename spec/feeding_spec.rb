@@ -759,5 +759,48 @@ RSpec.describe Plato do
 
 	end
 
+	context "Calcular la huella nutricional de los platos de un menú dietético" do
+
+		before(:all) do
+                        @lentejas = Alimento.new("Lentejas", 23.5, 52.0, 1.4, 0.4, 3.4)#300gr
+                        @nueces = Alimento.new("Nueces", 20.0, 21.0, 54.0, 0.3, 7.9)#200g
+                        @leche = Alimento.new("Leche", 3.3, 4.8, 3.2, 3.2, 8.9)#300gr
+                        @chocolate = Alimento.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4)#100gr
+                        @camarones = Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)#200gr
+                        
+			@alimentosLC = Lista.new(nil,nil)
+                        @alimentosLC.insert_group([@lentejas, @camarones])
+                        @gramosLC = Lista.new(nil,nil)
+                        @gramosLC.insert_group([300, 200])
+
+                        @eficienciaLC = Eficiencia.new("Lentejas y camarones", @alimentosLC, @gramosLC)
+
+                        @alimentosNLC = Lista.new(nil,nil)
+                        @alimentosNLC.insert_group([@nueces, @leche, @chocolate])
+                        @gramosNLC = Lista.new(nil,nil)
+                        @gramosNLC.insert_group([200, 300, 100])
+
+			@eficienciaNLC = Eficiencia.new("Postre de chocolate y nueces", @alimentosNLC, @gramosNLC)
+
+
+                        @tofu = Alimento.new("Tofu", 8.0, 1.9, 4.8, 2.0, 2.2)#100gr
+                        @cerveza = Alimento.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22)#200gr
+
+                        @alimentosTLC = Lista.new(nil,nil)
+                        @alimentosTLC.insert_group([@tofu, @lentejas, @cerveza])
+                        @gramosTLC = Lista.new(nil,nil)
+                        @gramosTLC.insert_group([100, 300, 200])
+
+                        @eficienciaTLC = Eficiencia.new("Tofu, Lentejas y cerveza", @alimentosTLC, @gramosTLC)
+
+			
+			@menu = [@eficienciaLC, @eficienciaNLC, @eficienciaTLC]
+			@precio = [7.35, 3.10, 4.50]
+
+		end
+
+	end
+
+
 
 end
