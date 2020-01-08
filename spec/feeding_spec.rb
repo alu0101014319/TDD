@@ -868,6 +868,16 @@ end
 
 RSpec.describe MenuDSL do
         context "Práctica 10 - Menú DSL" do
+		before(:all) do
+			@menugourmet = MenuDSL.new("Menú nº1") do
+                                descripcion "Menú gourmet para degustar productos artesanales"
+                                plato "Tequeños", :descripcion => "Tequeños con queso llarena", :precio => 4.5
+                                plato "Hamburguesa especial de la casa", :descripcion => "Hamburguesa con carne de vacuno y salsa especial de la casa", :precio => 8.20
+                                plato "Mousse de chocolate", :descripcion => "Mousse de chocolate negro Nestlé", :precio => 3
+                        end
+
+		end
+
 		it "Declaración de la clase MenuDSL" do
 			@menu1 = MenuDSL.new("Menú de ejemplo")
 		end
@@ -879,6 +889,10 @@ RSpec.describe MenuDSL do
 				plato "Hamburguesa especial de la casa", :descripcion => "Hamburguesa con carne de vacuno y salsa especial de la casa", :precio => 8.20
 				plato "Mousse de chocolate", :descripcion => "Mousse de chocolate negro Nestlé", :precio => 3
 			end
+		end
+
+		it " Salida formateada del plato" do
+			puts @menugourmet.to_s
 		end
 	end
 end

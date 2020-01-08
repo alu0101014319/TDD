@@ -17,13 +17,21 @@ class MenuDSL
 
 	def plato(nombre, options = {})
 		plato = nombre
-                plato << " Descripción: #{options[:descripcion]}" if options[:descripcion]
-                plato << " Precio: #{options[:precio]}€" if options[:precio]
+                plato << " (Descripción: #{options[:descripcion]})" if options[:descripcion]
+                plato << " (#{options[:precio]}€)\n" if options[:precio]
                 @precio += options[:precio]
 		@platos << plato
 	end
 
 	def descripcion(d)
 		@descripcion = d
+	end
+
+	def to_s
+		salida = @nombre
+                salida << "\n#{'=' * @nombre.size}\n"
+		salida << "Descripción: #{@descripcion}\n\n"
+                salida << "Platos: - #{@platos.join('- ')}\n"
+		salida << "Precio total: #{@precio}€\n\n"
 	end
 end
