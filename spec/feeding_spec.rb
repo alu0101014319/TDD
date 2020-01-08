@@ -825,5 +825,15 @@ RSpec.describe PlatoDSL do
 		it "Declaración de la clase PlatoDSL" do
 			@plato1 = PlatoDSL.new("Plato de ejemplo")
 		end
+
+		it "Alimentos del plato" do
+			@hamburguesa = PlatoDSL.new("Hamburguesa de la casa") do
+				alimento "Carne de vaca", :gramos => "100 gr"
+				alimento "Pan de semillas", :gramos => "200 gr"
+				alimento "Queso cheddar", :gramos => "20 gr"
+				alimento "Bacon", :gramos => "100 gr"
+				alimento "Salsa especial de la casa", :gramos => "10 gr"
+			end
+		end
 	end
 end
