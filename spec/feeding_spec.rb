@@ -822,12 +822,23 @@ end
 ##########################################################################################################################
 RSpec.describe PlatoDSL do
         context "Práctica 10 - Plato DSL" do
+		before(:all) do
+			@hamburguesa = PlatoDSL.new("Hamburguesa de la casa") do
+				alimento "Carne de vaca", :gramos => "100 gr", :proteinas => "Pr: 21.1 gr", :hidratos => "Hd: 0 gr", :lipidos => "Lp: 3.1 gr", :gases => "CO2: 50 kg/año", :terreno => "Terreno: 164 m2/año"
+				alimento "Pan de semillas", :gramos => "200 gr", :proteinas => "Pr: 15 gr", :hidratos => "Hd: 104 gr", :lipidos => "Lp: 2.6 gr", :gases => "CO2: 0.2 kg/año", :terreno => "Terreno: 10 m2/año"
+                                alimento "Queso cheddar", :gramos => "20 gr", :proteinas => "Pr: 5 gr", :hidratos => "Hd: 0.23 gr", :lipidos => "Lp: 6.3 gr", :gases => "CO2: 11 kg/año", :terreno => "Terreno: 41 m2/año"
+                                alimento "Bacon", :gramos => "100 gr", :proteinas => "Pr: 14.6 gr", :hidratos => "Hd: 0 gr", :lipidos => "Lp: 69.3 gr", :gases => "CO2: 57 kg/año", :terreno => "Terreno: 180 m2/año"
+				alimento "Salsa especial de la casa", :gramos => "10 gr",:proteinas => "Pr: 0.5 gr", :hidratos => "Hd: 0.42 gr", :lipidos => "Lp: 0.11 gr", :gases => "CO2: 1.1 kg/año", :terreno => "Terreno: 0.2 m2/año"
+
+			end
+		end
+
 		it "Declaración de la clase PlatoDSL" do
 			@plato1 = PlatoDSL.new("Plato de ejemplo")
 		end
 
 		it "Alimentos del plato" do
-			@hamburguesa = PlatoDSL.new("Hamburguesa de la casa") do
+			@hamburguesa_ejemplo = PlatoDSL.new("Hamburguesa de la casa") do
 				alimento "Carne de vaca", :gramos => "100 gr"
 				alimento "Pan de semillas", :gramos => "200 gr"
 				alimento "Queso cheddar", :gramos => "20 gr"
@@ -835,5 +846,10 @@ RSpec.describe PlatoDSL do
 				alimento "Salsa especial de la casa", :gramos => "10 gr"
 			end
 		end
+
+		it "Salida formateada del plato" do
+			puts @hamburguesa.to_s
+		end
+
 	end
 end
