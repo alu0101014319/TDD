@@ -823,12 +823,17 @@ end
 RSpec.describe PlatoDSL do
         context "Práctica 10 - Plato DSL" do
 		before(:all) do
-			@hamburguesa = PlatoDSL.new("Hamburguesa de la casa") do
-				alimento "Carne de vaca", :gramos => "100 gr", :proteinas => "Pr: 21.1 gr", :hidratos => "Hd: 0 gr", :lipidos => "Lp: 3.1 gr", :gases => "CO2: 50 kg/año", :terreno => "Terreno: 164 m2/año"
-				alimento "Pan de semillas", :gramos => "200 gr", :proteinas => "Pr: 15 gr", :hidratos => "Hd: 104 gr", :lipidos => "Lp: 2.6 gr", :gases => "CO2: 0.2 kg/año", :terreno => "Terreno: 10 m2/año"
-                                alimento "Queso cheddar", :gramos => "20 gr", :proteinas => "Pr: 5 gr", :hidratos => "Hd: 0.23 gr", :lipidos => "Lp: 6.3 gr", :gases => "CO2: 11 kg/año", :terreno => "Terreno: 41 m2/año"
-                                alimento "Bacon", :gramos => "100 gr", :proteinas => "Pr: 14.6 gr", :hidratos => "Hd: 0 gr", :lipidos => "Lp: 69.3 gr", :gases => "CO2: 57 kg/año", :terreno => "Terreno: 180 m2/año"
-				alimento "Salsa especial de la casa", :gramos => "10 gr",:proteinas => "Pr: 0.5 gr", :hidratos => "Hd: 0.42 gr", :lipidos => "Lp: 0.11 gr", :gases => "CO2: 1.1 kg/año", :terreno => "Terreno: 0.2 m2/año"
+			@primer_plato = PlatoDSL.new("Tequeños") do
+				alimento "Masa de trigo", :gramos => "300", :proteinas => "39.63", :hidratos => "216", :lipidos => "0", :gases => "1.2", :terreno => "5.6"
+				alimento "Queso llanero", :gramos => "200", :proteinas => "22", :hidratos => "10", :lipidos => "16", :gases => "13.5", :terreno => "53.2"
+                        end
+          
+			@segundo_plato = PlatoDSL.new("Hamburguesa de la casa") do
+				alimento "Carne de vaca", :gramos => "100", :proteinas => "21.1", :hidratos => "0", :lipidos => "3.1", :gases => "50", :terreno => "164"
+				alimento "Pan de semillas", :gramos => "200", :proteinas => "15", :hidratos => "104", :lipidos => "2.6", :gases => "0.2", :terreno => "10"
+                                alimento "Queso cheddar", :gramos => "20", :proteinas => "5", :hidratos => "0.23", :lipidos => "6.3", :gases => "11", :terreno => "41"
+                                alimento "Bacon", :gramos => "100", :proteinas => "14.6", :hidratos => "0", :lipidos => "69.3", :gases => "57", :terreno => "180"
+				alimento "Salsa especial de la casa", :gramos => "10",:proteinas => "0.5", :hidratos => "0.42", :lipidos => "0.11", :gases => "1.1", :terreno => "0.2"
 
 			end
 		end
@@ -848,7 +853,8 @@ RSpec.describe PlatoDSL do
 		end
 
 		it "Salida formateada del plato" do
-			puts @hamburguesa.to_s
+			puts @primer_plato.to_s
+			puts @segundo_plato.to_s
 		end
 
 	end
