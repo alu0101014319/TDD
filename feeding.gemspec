@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["alu0101014319@ull.edu.es"]
 
   spec.summary       = %q{Cálculo del impacto ambiental de la dieta diaria recomendada en hombres y mujeres}
-  spec.description   = %q{Producir un kilo de un alimento produce un impacto global, el cual vamos a calcular para una dieta recomendada}
+  spec.description   = %q{Gema para generar una dieta}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101014319.git"
 
 #  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
