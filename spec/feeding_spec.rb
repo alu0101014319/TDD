@@ -874,6 +874,7 @@ RSpec.describe MenuDSL do
 
 		it "Platos del menú" do
 			@menu_ejemplo = MenuDSL.new("Menú nº1") do
+				descripcion "Menú gourmet para degustar productos artesanales"
 				plato "Tequeños", :descripcion => "Tequeños con queso llarena", :precio => 4.5
 				plato "Hamburguesa especial de la casa", :descripcion => "Hamburguesa con carne de vacuno y salsa especial de la casa", :precio => 8.20
 				plato "Mousse de chocolate", :descripcion => "Mousse de chocolate negro Nestlé", :precio => 3

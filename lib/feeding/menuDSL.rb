@@ -22,4 +22,8 @@ class MenuDSL
                 @precio += options[:precio]
 		@platos << plato
 	end
+
+	def descripcion(d)
+		@descripcion = d
+	end
 end
