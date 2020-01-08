@@ -865,3 +865,12 @@ RSpec.describe PlatoDSL do
 
 	end
 end
+
+RSpec.describe MenuDSL do
+        context "Práctica 10 - Menú DSL" do
+		it "Declaración de la clase MenuDSL" do
+			@menu1 = MenuDSL.new("Menú de ejemplo")
+		end
+	end
+
+end
