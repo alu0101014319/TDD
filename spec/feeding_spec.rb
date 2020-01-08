@@ -913,5 +913,9 @@ Precio total: 15.7€
 ") 
 			#puts @menugourmet.to_s
 		end
+
+		it "Precio total del menú" do
+			expect(@menugourmet.precio).to eq(15.7)
+		end
 	end
 end

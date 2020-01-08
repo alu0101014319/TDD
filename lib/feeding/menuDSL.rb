@@ -1,5 +1,5 @@
 class MenuDSL
-
+	attr_accessor :precio, :nombre, :descripcion, :platos
 	def initialize(nombre, &block)
 		@nombre = nombre
 		@descripcion = ""

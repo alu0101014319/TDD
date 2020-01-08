@@ -1,9 +1,8 @@
 class PlatoDSL
-
+	attr_accessor :nombre, :alimentos
 	def initialize(nombre, &block)
 		@nombre = nombre
 		@alimentos = []
-		@gramos = []
 
 		if block_given?
 		  if block.arity == 1
