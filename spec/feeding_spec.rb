@@ -858,9 +858,17 @@ RSpec.describe PlatoDSL do
 		end
 
 		it "Salida formateada del plato" do
-			puts @primer_plato.to_s
-			puts @segundo_plato.to_s
-			puts @postre.to_s
+			expect(@primer_plato.to_s).to eq("Tequeños
+========
+
+Alimentos: - Masa de trigo (Gr: 300 gr) (Pr: 39.63 gr) (Hd: 216 gr) (Lp: 0 gr) (CO2: 1.2 kg/año) (Terreno: 5.6 m2/año)
+- Queso llanero (Gr: 200 gr) (Pr: 22 gr) (Hd: 10 gr) (Lp: 16 gr) (CO2: 13.5 kg/año) (Terreno: 53.2 m2/año)
+
+
+") 
+			#puts @primer_plato.to_s
+			#puts @segundo_plato.to_s
+			#puts @postre.to_s
 		end
 
 	end
@@ -892,7 +900,18 @@ RSpec.describe MenuDSL do
 		end
 
 		it " Salida formateada del plato" do
-			puts @menugourmet.to_s
+			expect(@menugourmet.to_s).to eq("Menú nº1
+========
+Descripción: Menú gourmet para degustar productos artesanales
+
+Platos: - Tequeños (Descripción: Tequeños con queso llarena) (4.5€)
+- Hamburguesa especial de la casa (Descripción: Hamburguesa con carne de vacuno y salsa especial de la casa) (8.2€)
+- Mousse de chocolate (Descripción: Mousse de chocolate negro Nestlé) (3€)
+
+Precio total: 15.7€
+
+") 
+			#puts @menugourmet.to_s
 		end
 	end
 end
