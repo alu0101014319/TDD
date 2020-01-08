@@ -817,7 +817,13 @@ RSpec.describe Plato do
 		end
 
 	end
+end
 
-
-
+##########################################################################################################################
+RSpec.describe PlatoDSL do
+        context "Práctica 10 - Plato DSL" do
+		it "Declaración de la clase PlatoDSL" do
+			@plato1 = PlatoDSL.new("Plato de ejemplo")
+		end
+	end
 end
