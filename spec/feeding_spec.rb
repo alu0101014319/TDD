@@ -871,6 +871,13 @@ RSpec.describe MenuDSL do
 		it "Declaración de la clase MenuDSL" do
 			@menu1 = MenuDSL.new("Menú de ejemplo")
 		end
-	end
 
+		it "Platos del menú" do
+			@menu_ejemplo = MenuDSL.new("Menú nº1") do
+				plato "Tequeños", :descripcion => "Tequeños con queso llarena", :precio => 4.5
+				plato "Hamburguesa especial de la casa", :descripcion => "Hamburguesa con carne de vacuno y salsa especial de la casa", :precio => 8.20
+				plato "Mousse de chocolate", :descripcion => "Mousse de chocolate negro Nestlé", :precio => 3
+			end
+		end
+	end
 end

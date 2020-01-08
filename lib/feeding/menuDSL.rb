@@ -14,4 +14,12 @@ class MenuDSL
 		  	end
 	    	end
 	end
+
+	def plato(nombre, options = {})
+		plato = nombre
+                plato << " Descripción: #{options[:descripcion]}" if options[:descripcion]
+                plato << " Precio: #{options[:precio]}€" if options[:precio]
+                @precio += options[:precio]
+		@platos << plato
+	end
 end
