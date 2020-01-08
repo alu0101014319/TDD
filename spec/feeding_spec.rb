@@ -834,7 +834,12 @@ RSpec.describe PlatoDSL do
                                 alimento "Queso cheddar", :gramos => "20", :proteinas => "5", :hidratos => "0.23", :lipidos => "6.3", :gases => "11", :terreno => "41"
                                 alimento "Bacon", :gramos => "100", :proteinas => "14.6", :hidratos => "0", :lipidos => "69.3", :gases => "57", :terreno => "180"
 				alimento "Salsa especial de la casa", :gramos => "10",:proteinas => "0.5", :hidratos => "0.42", :lipidos => "0.11", :gases => "1.1", :terreno => "0.2"
+			end
 
+			@postre = PlatoDSL.new("Muosse de Chocolate") do
+				alimento "Chocolate", :gramos => "160", :proteinas => "8.3", :hidratos => "82", :lipidos => "50", :gases => "2.3", :terreno => "3.4"
+				alimento "Mantequilla", :gramos => "50", :proteinas => "0.05", :hidratos => "0.05", :lipidos => "6.2", :gases => "11.7", :terreno => "36.4"
+				alimento "Huevos", :gramos => "100", :proteinas => "13", :hidratos => "1.1", :lipidos => "11", :gases => "4.2", :terreno => "5.7"
 			end
 		end
 
@@ -855,6 +860,7 @@ RSpec.describe PlatoDSL do
 		it "Salida formateada del plato" do
 			puts @primer_plato.to_s
 			puts @segundo_plato.to_s
+			puts @postre.to_s
 		end
 
 	end
