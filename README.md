@@ -21,3 +21,9 @@ Práctica 9: Programación funcional. Funciones de orden superior
 Autor: Eduardo Estévez Rodríguez
 
 Descripción: A partir de un conjunto de platos que conformen un menú dietético calcularemos la huella nutricional de cada uno de ellos y añadiremos un aumento de precio en base al precio del plato que mayor huella nutricional posea.
+
+Práctica 10: Lenguajes de Dominio Específico
+
+Autor: Eduardo Estévez Rodríguez
+
+Descripción: Diseñar e implementar un Lenguaje de Dominio Específico Domain Specific Language - DSL, siguiendo la filosofía de Ruby que permita la definición de menús diéticos diarios y semanales.
