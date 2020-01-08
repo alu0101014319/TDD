@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Producir un kilo de un alimento produce un impacto global, el cual vamos a calcular para una dieta recomendada}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101014319.git"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+#  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
